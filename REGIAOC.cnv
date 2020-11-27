@@ -1,0 +1,10 @@
+;regiaoc.CNV
+5 2 L
+;
+; Região da Unidade Sentinela
+;
+      1  Norte                                              11-17
+      2  Nordeste                                           21-29
+      3  Sudeste                                            31-33,35
+      4  Sul                                                41-43
+      5  Centro-Oeste                                       50-53

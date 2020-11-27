@@ -1,0 +1,46 @@
+; pais.cnv
+45  3
+      1  Em branco                                              ,000-999
+      2  BRASIL                                              001
+      3  GABAO                                               002
+      4  GEORGIA                                             003
+      5  IEMEN                                               004
+      6  LIBIA                                               005
+      7  MARROCOS                                            006
+      8  PERU                                                007
+      9  SEYCHELLES                                          008
+     10  SUICA                                               009
+     11  TURCOMENISTAO, REPUBLICA DO                         010
+     12  SOMALIA                                             011
+     13  BARBADOS                                            012
+     14  CAMBOJA (KAMPUCHEA)                                 013
+     15  "CAZAQUISTAO, REPUBLICA DO"                         014
+     16  GUINE                                               015
+     17  IRAQUE                                              016
+     18  IRLANDA                                             017
+     19  ISLANDIA                                            018
+     20  ITALIA                                              019
+     21  LIECHTENSTEIN                                       020
+     22  MEXICO                                              021
+     23  MOCAMBIQUE                                          022
+     24  SUECIA                                              023
+     25  NORUEGA                                             024
+     26  POLONIA                                             025
+     27  REPUBLICA TCHECA                                    026
+     28  SANTA LUCIA                                         027
+     29  SUDAO                                               028
+     30  "TAIWAN (FORMOSA, REPUBLICA DA CHINA)"              029
+     31  UZBEQUISTAO                                         030
+     32  "ANGOLA, REPUBLICA DE"                              031
+     33  ARGENTINA                                           032
+     34  BRUNEI                                              033
+     35  "COREIA, REPUBLICA DA (COREIA DO SUL)"              034
+     36  LUXEMBURGO                                          035
+     37  MALDIVAS                                            036
+     38  PAISES BAIXOS (HOLANDA)                             037
+     39  REINO UNIDO                                         038
+     40  UCRANIA                                             039
+     41  VIETNA                                              040
+     42  ALEMANHA                                            041
+     43  ANTIGUA E BARBUDA                                   042
+     44  BELGICA                                             043

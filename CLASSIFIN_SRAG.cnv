@@ -1,0 +1,8 @@
+; CLASSIFIN_SRAG.cnv
+6 1
+      1  Em Branco/Em investigação                           ,
+      2  SRAG por Influenza                                 1
+      3  SRAG por outro vírus respiratório                  2
+      4  SRAG por outro agente etiológico                   3
+      5  SRAG não especificado                              4
+      6  SRAG por COVID-19                                  5

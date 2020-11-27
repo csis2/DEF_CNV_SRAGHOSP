@@ -1,0 +1,9 @@
+;OBESIDADE.CNV
+7  4
+      1  Em branco                                             ,
+      2  Abaixo do peso (<18,5)                             000-184
+      3  Peso normal (18,5-24,9)                            185-249
+      4  Sobrepeso (25,0-29,9)                              250-299
+      5  Obesidade grau I (30,0-34,9)                       300-349
+      6  Obesidade grau II (35,0-39,9)                      350-399
+      7  Obesidade grau III (>= 40,0)                       400-999

@@ -1,0 +1,9 @@
+;ESCOLARIDADE.CNV
+7 1 L
+      1  Em Branco/Ignorado                                  ,9
+      2  Sem escolaridade/Analfabeto                        0
+      3  Fundamental 1º ciclo (1ª a 5ª série)               1
+      4  Fundamental 2º ciclo (6ª a 9ª série)               2
+      5  Médio (1º ao 3º ano)                               3
+      6  Superior                                           4
+      7  Não se aplica                                      5
