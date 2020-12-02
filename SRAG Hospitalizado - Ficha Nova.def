@@ -1,0 +1,570 @@
+; SIVEP-Gripe (novo): Ficha individual de Síndrome Respiratória Aguda Grave (SRAG)
+; Criado em MAIO/2019, por VE do Rio Grande do Sul, revisado RS maio2019 por GT-Influenza/MS.
+; Agradecimento especial aos profissionais de vigilância do Rio Grande do Sul por nos permiterem dislponibilizar
+; para a rede nacional de influeza. 
+; 02/12/2020 - Atualização que permite a tabulação da ficha de SRAG Hospitalizado para SARS-COV-2 (ficha padrão de 27/07/2020).
+
+Ac:\SivepGripe\BaseDBF\*.DBF
+
+;------------------DADOS DA NOTIFICAÇÃO---------------------
+
+; Definições para Ano e Mes da Notificação
+XAno da Notific,       DT_NOTIFI2,  1, ANOS.CNV
+LMes da Notific,       DT_NOTIFI2,  5, MESES.CNV
+CMes da Notific,       DT_NOTIFI2,  5, MESESC.CNV
+SMes da Notific,       DT_NOTIFI2,  5, MESES.CNV
+
+; Definicoes para região geográfica brasileira da Unidade de notificação.
+LReg.BR unid.not,         REG_US,      1,  UFREGIAO.CNV
+CReg.BR unid.not,         REG_US,      1,  REGIAOC.CNV
+SReg.BR unid.not,         REG_US,      1,  REGIAOC.CNV
+
+; Definicoes para unidade federativa da unidade de notificação.
+LUF da unid.not,      REG_US,      1,  UFCODIGO.CNV
+CUF da unid.not,      REG_US,      1,  UFCCODIG.CNV
+SUF da unid.not,      REG_US,      1,  UFCODIGO.CNV
+
+; Definições para Ano e Semana epidemiologica de notificação
+XSem.Epid Notific,     SEM_NOT,     1, SEMANAEP.CNV
+
+; Definições para Ano e Mes dos primeiros sintomas
+XAno Inic.Sintomas,    DT_SIN_PR2,  1, ANOS.CNV
+LMes Inic.Sintomas,    DT_SIN_PR2,  5, MESES.CNV
+CMes Inic.Sintomas,    DT_SIN_PR2,  5, MESESC.CNV
+SMes Inic.Sintomas,    DT_SIN_PR2,  5, MESES.CNV
+
+; Definições para Ano e Semana epidemiologica dos primeiros sintomas
+xSem.Epid.Sintomas,     SEM_PRI,     1, SEMANAEP.CNV
+
+; Definicoes para municípios NOT
+LMun da US AC,         CO_MUN_NOT,   1,  MUNICAC.CNV
+SMun da US AC,         CO_MUN_NOT,   1,  MUNICAC.CNV
+LMun da US AL,         CO_MUN_NOT,   1,  MUNICAL.CNV
+SMun da US AL,         CO_MUN_NOT,   1,  MUNICAL.CNV
+LMun da US AM,         CO_MUN_NOT,   1,  MUNICAM.CNV
+SMun da US AM,         CO_MUN_NOT,   1,  MUNICAM.CNV
+LMun da US AP,         CO_MUN_NOT,   1,  MUNICAP.CNV
+SMun da US AP,         CO_MUN_NOT,   1,  MUNICAP.CNV
+LMun da US BA,         CO_MUN_NOT,   1,  MUNICBA.CNV
+SMun da US BA,         CO_MUN_NOT,   1,  MUNICBA.CNV
+LMun da US BR,         CO_MUN_NOT,   1,  MUNICBR.CNV
+SMun da US BR,         CO_MUN_NOT,   1,  MUNICBR.CNV
+LMun da US CE,         CO_MUN_NOT,   1,  MUNICCE.CNV
+SMun da US CE,         CO_MUN_NOT,   1,  MUNICCE.CNV
+LMun da US DF,         CO_MUN_NOT,   1,  MUNICDF.CNV
+SMun da US DF,         CO_MUN_NOT,   1,  MUNICDF.CNV
+LMun da US ES,         CO_MUN_NOT,   1,  MUNICES.CNV
+SMun da US ES,         CO_MUN_NOT,   1,  MUNICES.CNV
+LMun da US GO,         CO_MUN_NOT,   1,  MUNICGO.CNV
+SMun da US GO,         CO_MUN_NOT,   1,  MUNICGO.CNV
+LMun da US MA,         CO_MUN_NOT,   1,  MUNICMA.CNV
+SMun da US MA,         CO_MUN_NOT,   1,  MUNICMA.CNV
+LMun da US MG,         CO_MUN_NOT,   1,  MUNICMG.CNV
+SMun da US MG,         CO_MUN_NOT,   1,  MUNICMG.CNV
+LMun da US MS,         CO_MUN_NOT,   1,  MUNICMS.CNV
+SMun da US MS,         CO_MUN_NOT,   1,  MUNICMS.CNV
+LMun da US MT,         CO_MUN_NOT,   1,  MUNICMT.CNV
+SMun da US MT,         CO_MUN_NOT,   1,  MUNICMT.CNV
+LMun da US PA,         CO_MUN_NOT,   1,  MUNICPA.CNV
+SMun da US PA,         CO_MUN_NOT,   1,  MUNICPA.CNV
+LMun da US PB,         CO_MUN_NOT,   1,  MUNICPB.CNV
+SMun da US PB,         CO_MUN_NOT,   1,  MUNICPB.CNV
+LMun da US PE,         CO_MUN_NOT,   1,  MUNICPE.CNV
+SMun da US PE,         CO_MUN_NOT,   1,  MUNICPE.CNV
+LMun da US PI,         CO_MUN_NOT,   1,  MUNICPI.CNV
+SMun da US PI,         CO_MUN_NOT,   1,  MUNICPI.CNV
+LMun da US PR,         CO_MUN_NOT,   1,  MUNICPR.CNV
+SMun da US PR,         CO_MUN_NOT,   1,  MUNICPR.CNV
+LMun da US RJ,         CO_MUN_NOT,   1,  MUNICRJ.CNV
+SMun da US RJ,         CO_MUN_NOT,   1,  MUNICRJ.CNV
+LMun da US RN,         CO_MUN_NOT,   1,  MUNICRN.CNV
+SMun da US RN,         CO_MUN_NOT,   1,  MUNICRN.CNV
+LMun da US RO,         CO_MUN_NOT,   1,  MUNICRO.CNV
+SMun da US RO,         CO_MUN_NOT,   1,  MUNICRO.CNV
+LMun da US RR,         CO_MUN_NOT,   1,  MUNICRR.CNV
+SMun da US RR,         CO_MUN_NOT,   1,  MUNICRR.CNV
+LMun da US RS,         CO_MUN_NOT,   1,  MUNICRS.CNV
+SMun da US RS,         CO_MUN_NOT,   1,  MUNICRS.CNV
+LMun da US SC,         CO_MUN_NOT,   1,  MUNICSC.CNV
+SMun da US SC,         CO_MUN_NOT,   1,  MUNICSC.CNV
+LMun da US SE,         CO_MUN_NOT,   1,  MUNICSE.CNV
+SMun da US SE,         CO_MUN_NOT,   1,  MUNICSE.CNV
+LMun da US SP,         CO_MUN_NOT,   1,  MUNICSP.CNV
+SMun da US SP,         CO_MUN_NOT,   1,  MUNICSP.CNV
+LMun da US TO,         CO_MUN_NOT,   1,  MUNICTO.CNV
+SMun da US TO,         CO_MUN_NOT,   1,  MUNICTO.CNV
+
+; Definicoes para Municípios de Fronteira
+XMun Fronteira Not,    CO_MUN_NOT,   1,  Munfront.cnv
+XMun Fronteira Res,    CO_MUN_RES,   1,  Munfront.cnv
+XRegiao Res,        CO_MUN_RES,          1, RS_regsaud.cnv
+XRegiao Not,        CO_MUN_NOT,          1, RS_regsaud.cnv
+XRegiao e Municipio,CO_MUN_RES,          1, RS_regsaud.cnv
+XReg Not nova,      CO_MUN_NOT,          1, RSregnova.cnv
+XReg Resi nova,     CO_MUN_RES,          1, RSregnova.cnv
+
+; Definições para Unidade de saude de Notificação
+; Arquivo unidanet.DBF deve ser exportado no SINAN NET.
+LUnid Notif,       CO_UNI_NOT, NM_UNIDADE, UNIDANET.DBF
+SUnid Notif,       CO_UNI_NOT, NM_UNIDADE, UNIDANET.DBF
+
+;-------------------DADOS DO PACIENTE--------------------------------
+
+; Definicoes para Sexo
+XSexo,                CS_SEXO,      1,  SEXO.CNV
+
+; Definicoes para Faixa Etaria
+XFx Etária,            COD_IDADE,    1,  FXETARIA.CNV
+LIdade detalhada,      COD_IDADE,    1,  IDADEDET.CNV
+SIdade detalhada,      COD_IDADE,    1,  IDADEDET.CNV
+
+;Definicoes para GESTANTE
+XGestante,             CS_GESTANTE,   1,  GESTANTE.CNV
+
+; Definições para Raça/Cor
+XRaça,                 CS_RACA,         1,  RACA.CNV
+
+; Definições para Etnia Indígena
+; Arquivo ETNIA.DBF deve ser exportado no SIVEP-Gripe
+LEtnia Ind,            CS_ETINIA, NM_ETNIA,  ETNIA.DBF
+SEtnia Ind,            CS_ETINIA, NM_ETNIA,  ETNIA.DBF
+
+; Definicoes para Escolaridade
+XEscolaridade,         CS_ESCOL_N,    1,  ESCOLARIDADE.CNV
+
+;------------------DADOS DE RESIDÊNCIA------------------------------
+
+; Definicoes para País de residência
+; Arquivo PAIS.DBF deve ser exportado no SIVEP-Gripe
+LPaís Resid,           COD_PAIS, NM_PAIS,   PAIS.DBF
+SPaís Resid,           COD_PAIS, NM_PAIS,   PAIS.DBF
+
+; Definicoes para região brasileira de residência
+LRegião BR Res,           REG_US_RES,    1,  UFREGIAO.CNV
+CRegião BR Res,           REG_US_RES,    1,  REGIAOC.CNV
+SRegião BR Res,           REG_US_RES,    1,  REGIAOC.CNV
+
+; Definicoes para unidade federada (UF) de residência
+LUF Residência,        REG_US_RES,    1,  UFCODIGO.CNV
+CUF Residência,        REG_US_RES,    1,  UFCCODIG.CNV
+SUF Residência,        REG_US_RES,    1,  UFCODIGO.CNV
+
+; Definicoes para Município de residência
+DMun Resid AC,         CO_MUN_RESI,   1,  MUNICAC.CNV
+SMun Resid AC,         CO_MUN_RESI,   1,  MUNICAC.CNV
+DMun Resid AL,         CO_MUN_RESI,   1,  MUNICAL.CNV
+SMun Resid AL,         CO_MUN_RESI,   1,  MUNICAL.CNV
+DMun Resid AM,         CO_MUN_RESI,   1,  MUNICAM.CNV
+SMun Resid AM,         CO_MUN_RESI,   1,  MUNICAM.CNV
+DMun Resid AP,         CO_MUN_RESI,   1,  MUNICAP.CNV
+SMun Resid AP,         CO_MUN_RESI,   1,  MUNICAP.CNV
+DMun Resid BA,         CO_MUN_RESI,   1,  MUNICBA.CNV
+SMun Resid BA,         CO_MUN_RESI,   1,  MUNICBA.CNV
+DMun Resid BR,         CO_MUN_RESI,   1,  MUNICBR.CNV
+SMun Resid BR,         CO_MUN_RESI,   1,  MUNICBR.CNV
+DMun Resid CE,         CO_MUN_RESI,   1,  MUNICCE.CNV
+SMun Resid CE,         CO_MUN_RESI,   1,  MUNICCE.CNV
+DMun Resid DF,         CO_MUN_RESI,   1,  MUNICDF.CNV
+SMun Resid DF,         CO_MUN_RESI,   1,  MUNICDF.CNV
+DMun Resid ES,         CO_MUN_RESI,   1,  MUNICES.CNV
+SMun Resid ES,         CO_MUN_RESI,   1,  MUNICES.CNV
+DMun Resid GO,         CO_MUN_RESI,   1,  MUNICGO.CNV
+SMun Resid GO,         CO_MUN_RESI,   1,  MUNICGO.CNV
+DMun Resid MA,         CO_MUN_RESI,   1,  MUNICMA.CNV
+SMun Resid MA,         CO_MUN_RESI,   1,  MUNICMA.CNV
+DMun Resid MG,         CO_MUN_RESI,   1,  MUNICMG.CNV
+SMun Resid MG,         CO_MUN_RESI,   1,  MUNICMG.CNV
+DMun Resid MS,         CO_MUN_RESI,   1,  MUNICMS.CNV
+SMun Resid MS,         CO_MUN_RESI,   1,  MUNICMS.CNV
+DMun Resid MT,         CO_MUN_RESI,   1,  MUNICMT.CNV
+SMun Resid MT,         CO_MUN_RESI,   1,  MUNICMT.CNV
+DMun Resid PA,         CO_MUN_RESI,   1,  MUNICPA.CNV
+SMun Resid PA,         CO_MUN_RESI,   1,  MUNICPA.CNV
+DMun Resid PB,         CO_MUN_RESI,   1,  MUNICPB.CNV
+SMun Resid PB,         CO_MUN_RESI,   1,  MUNICPB.CNV
+DMun Resid PE,         CO_MUN_RESI,   1,  MUNICPE.CNV
+SMun Resid PE,         CO_MUN_RESI,   1,  MUNICPE.CNV
+DMun Resid PI,         CO_MUN_RESI,   1,  MUNICPI.CNV
+SMun Resid PI,         CO_MUN_RESI,   1,  MUNICPI.CNV
+DMun Resid PR,         CO_MUN_RESI,   1,  MUNICPR.CNV
+SMun Resid PR,         CO_MUN_RESI,   1,  MUNICPR.CNV
+DMun Resid RJ,         CO_MUN_RESI,   1,  MUNICRJ.CNV
+SMun Resid RJ,         CO_MUN_RESI,   1,  MUNICRJ.CNV
+DMun Resid RN,         CO_MUN_RESI,   1,  MUNICRN.CNV
+SMun Resid RN,         CO_MUN_RESI,   1,  MUNICRN.CNV
+DMun Resid RO,         CO_MUN_RESI,   1,  MUNICRO.CNV
+SMun Resid RO,         CO_MUN_RESI,   1,  MUNICRO.CNV
+DMun Resid RR,         CO_MUN_RESI,   1,  MUNICRR.CNV
+SMun Resid RR,         CO_MUN_RESI,   1,  MUNICRR.CNV
+DMun Resid RS,         CO_MUN_RESI,   1,  MUNICRS.CNV
+SMun Resid RS,         CO_MUN_RESI,   1,  MUNICRS.CNV
+DMun Resid SC,         CO_MUN_RESI,   1,  MUNICSC.CNV
+SMun Resid SC,         CO_MUN_RESI,   1,  MUNICSC.CNV
+DMun Resid SE,         CO_MUN_RESI,   1,  MUNICSE.CNV
+SMun Resid SE,         CO_MUN_RESI,   1,  MUNICSE.CNV
+DMun Resid SP,         CO_MUN_RESI,   1,  MUNICSP.CNV
+SMun Resid SP,         CO_MUN_RESI,   1,  MUNICSP.CNV
+DMun Resid TO,         CO_MUN_RESI,   1,  MUNICTO.CNV
+SMun Resid TO,         CO_MUN_RESI,   1,  MUNICTO.CNV
+
+; Definicoes para Bairro de Residencia
+; Arquivo BAIRRO.DBF deve ser exportado no SIVEP-Gripe
+LBairro Resid,         NM_BAIRRO, BAIRRO.DBF
+SBairro Resid,         NM_BAIRRO, BAIRRO.DBF
+
+; Definicoes para Zona de Residência
+XZona Resid,           CS_ZONA,         1,  ZONA.CNV
+
+;------------- DADOS CLÍNICOS E EPIDEMIOLÓGICOS -----------------
+
+; Definição para histórico de viagem internacional até 14 dias antes do inicio dos sintomas.
+XHistorico viagem, HISTO_VGM, 1, SIM_NAO.CNV
+
+; País da viagem internacional do paciente.
+LPaís viagem,  CO_PS_VGM2,NM_PAIS,   PAIS.DBF
+SPaís viagem, CO_PS_VGM2,NM_PAIS,   PAIS.DBF
+
+; Definições para Ano e Mes da Viagem.
+XAno da Viagem,       DT_VGM2,  1, ANOS.CNV
+LMes da Viagem,       DT_VGM2,  5, MESES.CNV
+CMes da Viagem,       DT_VGM2,  5, MESESC.CNV
+SMes da Viagem,       DT_VGM2,  5, MESES.CNV
+
+; Definições para Ano e Mes da Viagem de retorno.
+XAno da Viag.Ret,       DT_RT_VGM2,  1, ANOS.CNV
+LMes da Viag.Ret,       DT_RT_VGM2,  5, MESES.CNV
+CMes da Viag.Ret,       DT_RT_VGM2,  5, MESESC.CNV
+SMes da Viag.Ret,       DT_RT_VGM2,  5, MESES.CNV
+
+; Definições para Surto de SG
+XCaso de Surto SG,        SURTO_SG,     1,  SIM_NAO.CNV
+
+; Definições para Nosocomial
+XNosocomial,      NOSOCOMIAL,     1,  SIM_NAO.CNV
+
+; Definições para Trabalha com Aves ou Suinos
+XContato aves ou suinos,   AVE_SUINO,     1,  SIM_NAO.CNV
+
+; Definições para Sinais e sintomas
+XFebre,                 FEBRE,       1,  SIM_NAO.CNV
+XTosse,                 TOSSE,       1,  SIM_NAO.CNV
+XDor de Garganta,       GARGANTA,    1,  SIM_NAO.CNV
+XDispneia,              DISPNEIA,    1,  SIM_NAO.CNV
+XDesconforto Resp,      DESC_RESP,   1,  SIM_NAO.CNV
+XSaturação O2,          SATURACAO,   1,  SIM_NAO.CNV
+XDiarreia,              DIARREIA,    1,  SIM_NAO.CNV
+XVomito,                VOMITO,      1,  SIM_NAO.CNV
+XDor abd.,              DOR_ABD,     1,  SIM_NAO.CNV
+XFadiga,                FADIGA,      1,  SIM_NAO.CNV
+XPerda Olfato,          PERD_OLFT,   1,  SIM_NAO.CNV
+XPerda Paladar,         PERD_PALA,   1,  SIM_NAO.CNV
+XOutros Sint.,          OUTRO_SIN,   1,  SIM_NAO.CNV
+
+; Definições para Fatores de Risco
+XPuérpera,              PUERPERA,    1,  SIM_NAO.CNV
+XSíndrome de Down,      SIND_DOWN,   1,  SIM_NAO.CNV
+XAsma,                  ASMA,        1,  SIM_NAO.CNV
+XDiabetes Mellitus,     DIABETES,    1,  SIM_NAO.CNV
+XImunodeficiência,      IMUNODEPRE,  1,  SIM_NAO.CNV
+XHematologica,          HEMATOLOGI,  1,  SIM_NAO.CNV
+XDoença Cardiovascular, CARDIOPATI,  1,  SIM_NAO.CNV
+XDoença Hepática Crôn,  HEPATICA,    1,  SIM_NAO.CNV
+XDoença Neurológica,    NEUROLOGIC,  1,  SIM_NAO.CNV
+XDoença Renal Crônica,  RENAL,       1,  SIM_NAO.CNV
+XPneumopatia Crônica,   PNEUMOPATI,  1,  SIM_NAO.CNV
+XObesidade,             OBESIDADE,   1,  SIM_NAO.CNV
+XOutros fatores risco,  OUT_MORBI,   1,  SIM_NAO.CNV
+
+; Definições para Classificação do IMC
+LClassificação IMC,     OBES_IMC,         1,  OBESIDADE.CNV
+CClassificação IMC,     OBES_IMC,         1,  OBESIDADE.CNV
+SClassificação IMC,     OBES_IMC,         1,  OBESIDADE.CNV
+
+; Definições para vacina na última campanha
+XVacina Flu últ.campanha,   VACINA,      1,  SIM_NAO.CNV
+
+; Definições para Ano e Mês da última vacina campanha
+XAno vac.flu ult camp,        DT_UT_DOS2,   1,  ANOS.CNV
+LMês vac.flu ult camp,        DT_UT_DOS2,   5,  MESES.CNV
+CMês vac.flu ult camp,        DT_UT_DOS2,   5,  MESESC.CNV
+SMes vac.flu ult camp,        DT_UT_DOS2,   5,  MESES.CNV
+
+; Definições para crianca mãe vacinada e amamentação
+XMãe vacinou? <6meses,      MAE_VAC,     1,  SIM_NAO.CNV
+XMãe amamenta <6meses,   M_AMAMENTA,  1,  SIM_NAO.CNV
+
+; Definições para Ano e Mês da última dose da vacina da mãe se criança
+XAno vac. mãe<6mes,    DT_VAC_MA2,   1,  ANOS.CNV
+LMês vac. mãe<6mes,    DT_VAC_MA2,   5,  MESES.CNV
+CMês vac. mãe<6mes,    DT_VAC_MA2,   5,  MESESC.CNV
+SMes vac. mãe<6mes,    DT_VAC_MA2,   5,  MESES.CNV
+
+; Definições para Ano e Mês da dose unica vacina crianca >6m a <8anos
+XAno vac.dose unic,   DT_DOSEUN2,   1,  ANOS.CNV
+LMês vac.dose unic,   DT_DOSEUN2,   5,  MESES.CNV
+CMês vac.dose unic,   DT_DOSEUN2,   5,  MESESC.CNV
+SMes vac.dose unic,   DT_DOSEUN2,   5,  MESES.CNV
+
+; Definições para Ano e Mês da 1ª Dose vacina FLU criança >6m a <8anos
+XAno vac.D1 crianca,   DT_1_DOSE2,   1,  ANOS.CNV
+LMês vac.D1 crianca,   DT_1_DOSE2,   5,  MESES.CNV
+CMês vac.D1 crianca,   DT_1_DOSE2,   5,  MESESC.CNV
+SMes vac.D1 crianca,   DT_1_DOSE2,   5,  MESES.CNV
+
+; Definições para Ano e Mês da 2ª Dose vacina FLU criança >6m a <8anos
+XAno vac.D2 crianca,   DT_2_DOSE2,   1,  ANOS.CNV
+LMês vac.D2 crianca,   DT_2_DOSE2,   5,  MESES.CNV
+CMês vac.D2 crianca,   DT_2_DOSE2,   5,  MESESC.CNV
+SMes vac.D2 crianca,   DT_2_DOSE2,   5,  MESES.CNV
+
+; Definições uso do antiviral
+XUso de antiviral,      ANTIVIRAL,   1,  SIM_NAO.CNV
+
+; Definições uso do tipo de antiviral
+XTipo de antiviral,     TP_ANTIVIR,  1,  ANTIVIRAL.CNV
+
+; Definições para Ano e Mês do início do tratamento
+XAno Ini.antiviral,     DT_ANTIVI2,  1,  ANOS.CNV
+LMês Ini.antiviral,     DT_ANTIVI2,  5,  MESES.CNV
+CMês Ini.antiviral,     DT_ANTIVI2,  5,  MESESC.CNV
+SMes Ini.antiviral,     DT_ANTIVI2,  5,  MESES.CNV
+
+; Definições para Internação
+XInternacao,          HOSPITAL,     1,  SIM_NAO.CNV
+
+; Definições para Ano e Mês da Internação
+XAno Internacao,        DT_INTERNA,   1,  ANOS.CNV
+LMês Internacao,        DT_INTERNA,   5,  MESES.CNV
+CMês Internacao,        DT_INTERNA,   5,  MESESC.CNV
+SMes Internacao,        DT_INTERNA,   5,  MESES.CNV
+
+; Definicoes para unidade federada (UF) de internação.
+LUF Internacao,        CD_UF_HOSP,    1,  UFCODIGO.CNV
+CUF Internacao,        CD_UF_HOSP,    1,  UFCCODIG.CNV
+SUF Internacao,        CD_UF_HOSP,    1,  UFCODIGO.CNV
+
+; Definicoes para municípios hospitalização.
+LMun internacao AC,         CO_MU_INTE,   1,  MUNICAC.CNV
+SMun internacao AC,         CO_MU_INTE,   1,  MUNICAC.CNV
+LMun internacao AL,         CO_MU_INTE,   1,  MUNICAL.CNV
+SMun internacao AL,         CO_MU_INTE,   1,  MUNICAL.CNV
+LMun internacao AM,         CO_MU_INTE,   1,  MUNICAM.CNV
+SMun internacao AM,         CO_MU_INTE,   1,  MUNICAM.CNV
+LMun internacao AP,         CO_MU_INTE,   1,  MUNICAP.CNV
+SMun internacao AP,         CO_MU_INTE,   1,  MUNICAP.CNV
+LMun internacao BA,         CO_MU_INTE,   1,  MUNICBA.CNV
+SMun internacao BA,         CO_MU_INTE,   1,  MUNICBA.CNV
+LMun internacao BR,         CO_MU_INTE,   1,  MUNICBR.CNV
+SMun internacao BR,         CO_MU_INTE,   1,  MUNICBR.CNV
+LMun internacao CE,         CO_MU_INTE,   1,  MUNICCE.CNV
+SMun internacao CE,         CO_MU_INTE,   1,  MUNICCE.CNV
+LMun internacao DF,         CO_MU_INTE,   1,  MUNICDF.CNV
+SMun internacao DF,         CO_MU_INTE,   1,  MUNICDF.CNV
+LMun internacao ES,         CO_MU_INTE,   1,  MUNICES.CNV
+SMun internacao ES,         CO_MU_INTE,   1,  MUNICES.CNV
+LMun internacao GO,         CO_MU_INTE,   1,  MUNICGO.CNV
+SMun internacao GO,         CO_MU_INTE,   1,  MUNICGO.CNV
+LMun internacao MA,         CO_MU_INTE,   1,  MUNICMA.CNV
+SMun internacao MA,         CO_MU_INTE,   1,  MUNICMA.CNV
+LMun internacao MG,         CO_MU_INTE,   1,  MUNICMG.CNV
+SMun internacao MG,         CO_MU_INTE,   1,  MUNICMG.CNV
+LMun internacao MS,         CO_MU_INTE,   1,  MUNICMS.CNV
+SMun internacao MS,         CO_MU_INTE,   1,  MUNICMS.CNV
+LMun internacao MT,         CO_MU_INTE,   1,  MUNICMT.CNV
+SMun internacao MT,         CO_MU_INTE,   1,  MUNICMT.CNV
+LMun internacao PA,         CO_MU_INTE,   1,  MUNICPA.CNV
+SMun internacao PA,         CO_MU_INTE,   1,  MUNICPA.CNV
+LMun internacao PB,         CO_MU_INTE,   1,  MUNICPB.CNV
+SMun internacao PB,         CO_MU_INTE,   1,  MUNICPB.CNV
+LMun internacao PE,         CO_MU_INTE,   1,  MUNICPE.CNV
+SMun internacao PE,         CO_MU_INTE,   1,  MUNICPE.CNV
+LMun internacao PI,         CO_MU_INTE,   1,  MUNICPI.CNV
+SMun internacao PI,         CO_MU_INTE,   1,  MUNICPI.CNV
+LMun internacao PR,         CO_MU_INTE,   1,  MUNICPR.CNV
+SMun internacao PR,         CO_MU_INTE,   1,  MUNICPR.CNV
+LMun internacao RJ,         CO_MU_INTE,   1,  MUNICRJ.CNV
+SMun internacao RJ,         CO_MU_INTE,   1,  MUNICRJ.CNV
+LMun internacao RN,         CO_MU_INTE,   1,  MUNICRN.CNV
+SMun internacao RN,         CO_MU_INTE,   1,  MUNICRN.CNV
+LMun internacao RO,         CO_MU_INTE,   1,  MUNICRO.CNV
+SMun internacao RO,         CO_MU_INTE,   1,  MUNICRO.CNV
+LMun internacao RR,         CO_MU_INTE,   1,  MUNICRR.CNV
+SMun internacao RR,         CO_MU_INTE,   1,  MUNICRR.CNV
+LMun internacao RS,         CO_MU_INTE,   1,  MUNICRS.CNV
+SMun internacao RS,         CO_MU_INTE,   1,  MUNICRS.CNV
+LMun internacao SC,         CO_MU_INTE,   1,  MUNICSC.CNV
+SMun internacao SC,         CO_MU_INTE,   1,  MUNICSC.CNV
+LMun internacao SE,         CO_MU_INTE,   1,  MUNICSE.CNV
+SMun internacao SE,         CO_MU_INTE,   1,  MUNICSE.CNV
+LMun internacao SP,         CO_MU_INTE,   1,  MUNICSP.CNV
+SMun internacao SP,         CO_MU_INTE,   1,  MUNICSP.CNV
+LMun internacao TO,         CO_MU_INTE,   1,  MUNICTO.CNV
+SMun internacao TO,         CO_MU_INTE,   1,  MUNICTO.CNV
+
+; Definições para Unidade de saude de internação
+; Arquivo unidanet.DBF deve ser exportado no SINAN NET.
+LUnid Internacao,       CO_UN_INTE, NM_UNIDADE, UNIDANET.DBF
+SUnid Internacao,       CO_UN_INTE, NM_UNIDADE, UNIDANET.DBF
+
+; Definições para Internação em UTI
+XInternação UTI,        UTI,         1,  SIM_NAO.CNV
+
+; Definições para Ano e Mês da entrada na UTI
+XAno Entrada UTI,       DT_ENTUTI2,   1,  ANOS.CNV
+LMês Entrada UTI,       DT_ENTUTI2,   5,  MESES.CNV
+CMês Entrada UTI,       DT_ENTUTI2,   5,  MESESC.CNV
+SMes Entrada UTI,       DT_ENTUTI2,   5,  MESES.CNV
+
+; Definições para Ano e Mês de saída da UTI
+XAno Saída UTI,         DT_SAIDUT2,  1,  ANOS.CNV
+LMês Saída UTI,         DT_SAIDUT2,  5,  MESES.CNV
+CMês Saída UTI,         DT_SAIDUT2,  5,  MESESC.CNV
+SMes Saída UTI,         DT_SAIDUT2,  5,  MESES.CNV
+
+; Definições para Uso de suporte ventilatório
+XUso Suporte.Vent,      SUPORT_VEN,  1,  SUPORT_VEN.CNV
+
+; Definições para Raio X de Tórax
+LRaio X,                RAIOX_RES,   1,  RAIOX.CNV
+CRaio X,                RAIOX_RES,   1,  RAIOX.CNV
+SRaio X,                RAIOX_RES,   1,  RAIOX.CNV
+
+; Definições para Ano e Mês do Raio X de Tórax
+XAno Raio X,            DT_RAIOX2,    1,  ANOS.CNV
+LMês Raio X,            DT_RAIOX2,    5,  MESES.CNV
+CMês Raio X,            DT_RAIOX2,    5,  MESESC.CNV
+SMes Raio X,            DT_RAIOX2,    5,  MESES.CNV
+
+; Definições para aspecto da tomografia
+XAspecto tomografia,      COD_TOMOG,  1,  TOMOGRAFIA.CNV
+
+; Definições para Ano e Mês da data da tomografia
+XAno Tomografia,         DT_TOMO2,  1,  ANOS.CNV
+LMês Tomografia,         DT_TOMO2,  5,  MESES.CNV
+CMês Tomografia,         DT_TOMO2,  5,  MESESC.CNV
+SMes Tomografia,         DT_TOMO2,  5,  MESES.CNV
+
+; Definições para Coleta de amostra
+XColetou amostra?,      AMOSTRA,     1,  SIM_NAO.CNV
+
+; Definições para Ano e Mês da coleta de amostra
+XAno Coleta,            DT_COLETA2,   1,  ANOS.CNV
+LMês Coleta,            DT_COLETA2,   5,  MESES.CNV
+CMês Coleta,            DT_COLETA2,   5,  MESESC.CNV
+SMes Coleta,            DT_COLETA2,   5,  MESES.CNV
+
+; Definição para Tipo de amostra
+XTipo amostra,          TP_AMOSTRA,  1,  TP_AMOSTRA.CNV
+
+;---------------------DADOS LABORATORIAIS---------------------------
+
+ ;Definição para tipo de teste para pesquisa de antigenos virais.
+XTipo test antigen, TP_TES_A2, 1, TP_ANTIGENO.CNV
+
+; Definições para Ano e Mês para pesquisa de antigenos
+XAno Resul.antigen,         DT_RES_AN2,    1,  ANOS.CNV
+LMês Resul.antigen,         DT_RES_AN2,    5,  MESES.CNV
+CMês Resul.antigen,         DT_RES_AN2,    5,  MESESC.CNV
+SMes Resul.antigen,         DT_RES_AN2,    5,  MESES.CNV
+
+; Definição para resultado do teste antigenico.
+XRes. test antigen, RES_AN, 1, RESULTADO_ANTIGEN.CNV
+
+; Definição para laboratório que realizou o teste antigenico.
+LLaboratorio,       CO_LAB_AN, NM_LABORA, LABORATORIO.DBF
+SLaboratorio,       CO_LAB_AN, NM_LABORA, LABORATORIO.DBF
+
+; Definição para agente etiológico para teste antigênico
+XPositivo p/Influ?, POS_AN_FLU, 1, SIM_NAO.CNV
+XQual Influenza?, TP_FLU_AN, 1, TIPO_FLU.CNV
+XPos. Outros Virus,   POS_AN_OUT   1,  SIM_NAO.CNV
+XSARS-COV-2,            AN_SARS2,    1,  CHECKBOX.CNV
+XSincicial Resp.,       AN_VSR,      1,  CHECKBOX.CNV
+XParaInfluenza1,        AN_PARA1,    1,  CHECKBOX.CNV
+XParaInfluenza2,        AN_PARA2,    1,  CHECKBOX.CNV
+XParaInfluenza3,        AN_PARA3,    1,  CHECKBOX.CNV
+XAdenovírus,            AN_ADENO,    1,  CHECKBOX.CNV
+XOutro vírus,           AN_OUTRO,    1,  CHECKBOX.CNV
+
+;Definição para Resultado do RT-PCR
+XResultado PCR,         PCR_RESUL,   1,  PCR_RESUL.CNV
+
+; Definições para Ano e Mês do resultado do RT-PCR
+XAno Result.PCR,         DT_PCR2,      1,  ANOS.CNV
+LMês Result.PCR,         DT_PCR2,      5,  MESES.CNV
+CMês Result.PCR,         DT_PCR2,      5,  MESESC.CNV
+SMes Result.PCR,         DT_PCR2,      5,  MESES.CNV
+
+; Definições para Agente Etiológico do RT-PCR
+xPos.Influ.PCR?,          POS_PCRFLU,   1,  SIM_NAO.CNV
+XTipo Flu PCR,            TP_FLU_PCR,   1,  TIPO_FLU.CNV
+XFLU A subtipo PCR,       PCR_FLUASU,   1,  FLUA_SUBT.CNV
+XFLU B linhagem PCR,      PCR_FLUBLI,   1,  FLUB_LINHAGEM.CNV
+XPos.Outro.Vir.PCR?,      POS_PCROUT,   1,  SIM_NAO.CNV
+XSARS-COV-2 PCR,          PCR_SARS2,    1,  CHECKBOX.CNV
+XVSR_PCR,                 PCR_VSR,      1,  CHECKBOX.CNV
+XParaFLU1 PCR,            PCR_PARA1,    1,  CHECKBOX.CNV
+XParaFLU2 PCR,            PCR_PARA2,    1,  CHECKBOX.CNV
+XParaFLU3 PCR,            PCR_PARA3,    1,  CHECKBOX.CNV
+XParaFLU4 PCR,            PCR_PARA4,    1,  CHECKBOX.CNV
+XAdenovírus PCR,          PCR_ADENO,    1,  CHECKBOX.CNV
+XMetapneumovírus PCR,     PCR_METAP,    1,  CHECKBOX.CNV
+XBocavírus PCR,           PCR_BOCA,     1,  CHECKBOX.CNV
+XRinovírus PCR,           PCR_RINO,     1,  CHECKBOX.CNV
+XOutro vírus PCR,         PCR_OUTRO,    1,  CHECKBOX.CNV
+
+; Definição para laboratório que realizou o teste antigenico.
+LLaboratorio PCR,   CO_LAB_PCR, NM_LABORA, LABORATORIO.DBF
+SLaboratorio PCR,   CO_LAB_PCR, NM_LABORA, LABORATORIO.DBF
+
+; Definição para tipo de amostra SARS-COV-2.
+XTp.amost. SARSCOV2, TP_AM_SOR2, 1, AMOSTRA_SARSCOV2.CNV
+
+; Definições para Ano e Mês da data de coleta da amostra sorologica para SARS-COV-2.
+XAno Amostra PCR,         DT_CO_SOR2,      1,  ANOS.CNV
+LMês Amostra PCR,         DT_CO_SOR2,      5,  MESES.CNV
+CMês Amostra PCR,         DT_CO_SOR2,      5,  MESESC.CNV
+SMes Amostra PCR,         DT_CO_SOR2,      5,  MESES.CNV
+
+; Definição para tipo de sorologia para SARS-COV-2.
+XTp.sor.SARSCOV2, TP_SOR2, 1, TIPO_SOR_SARSCOV2.CNV
+
+; Definição para resultado do teste sorologico para SARS-COV-2.
+XRes.SARSCOV2 IgG, RES_IGG, 1, RESULTADO_ANTIGEN.CNV
+XRes.SARSCOV2 IgM, RES_IGM, 1, RESULTADO_ANTIGEN.CNV
+XRes.SARSCOV2 IgA, RES_IGA, 1, RESULTADO_ANTIGEN.CNV
+
+; Definições para Ano e Mês da data do resultado do teste sorologico para SARS-COV-2.
+XAno Res.SARS-COV-2,         DT_RES2,      1,  ANOS.CNV
+LMês Res.SARS-COV-2,         DT_RES2,      5,  MESES.CNV
+CMês Res.SARS-COV-2,         DT_RES2,      5,  MESESC.CNV
+SMes Res.SARS-COV-2,         DT_RES2,      5,  MESES.CNV
+
+;----------------------CONCLUSÃO-------------------------------
+; Definições para Classificação Final
+XClassific. Final,   CLASSI_FIN,  1,  CLASSIFIN_SRAG.CNV
+
+; Definições para Critério de encerramento
+XCritério Encerra,      CRITERIO,    1,  CRITERIO_ENC.CNV
+
+; Definições para Evolução do caso
+XEvolução,              EVOLUCAO,    1,  EVOLUCAO.CNV
+
+; Definições para Ano e Mes da alta ou óbito
+XAno alta/óbito,        DT_EVOLUC2,     1,  ANOS.CNV
+LMes alta/óbito,        DT_EVOLUC2,     5,  MESES.CNV
+CMes alta/óbito,        DT_EVOLUC2,     5,  MESESC.CNV
+SMes alta/óbito,        DT_EVOLUC2,     5,  MESES.CNV
+
+; Definições para Ano e Mes de Encerramento
+XAno Encerramento,      DT_ENCERR2,  1,  ANOS.CNV
+LMes Encerramento,      DT_ENCERR2,  5,  MESES.CNV
+CMes Encerramento,      DT_ENCERR2,  5,  MESESC.CNV
+SMes Encerramento,      DT_ENCERR2,  5,  MESES.CNV
+
+;----------------------DADOS DA DIGITAÇÃO-------------------------------
+; Definições para Ano e Mes da digitação da ficha no sistema
+XAno Digitação,         DT_DIGITA,   1,  ANOS.CNV
+LMes Digitação,         DT_DIGITA,   5,  MESES.CNV
+CMes Digitação,         DT_DIGITA,   5,  MESESC.CNV
+SMes Digitação,         DT_DIGITA,   5,  MESES.CNV
