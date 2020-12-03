@@ -78,5 +78,6 @@ Para compilar, é necessário indicar a biblioteca hbct na linha de comando:
 
 Escaneando o arquivo executável que faz parte desse projeto no serviço online VirusTotal, não foi detectado conteúdo malicioso nele pelos antivírus mais conhecidos no  mercado, como o AVG, McAfee, Avast, Kapersky, Symantec, F-Secure etc.
 
-Você também pode constatar a segurança do arquivo "sraghosp_plus.exe" utilizando o VirusTotal (https://www.virustotal.com/gui/) para fazer uma checagem desse arquivo, o serviço é online e gratuito.
+Você também pode constatar a segurança do arquivo "sraghosp_plus.exe" utilizando o VirusTotal (https://www.virustotal.com/gui/).
+O serviço é online e gratuito.
 
