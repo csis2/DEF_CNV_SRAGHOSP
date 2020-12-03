@@ -47,7 +47,7 @@ Uma vez renomeado, rode o arquivo "sraghosp_plus.exe", que também estará na su
 
 ![alt text](https://github.com/csis2/DEF_CNV_SRAGHOSP/blob/main/img/imagem09.bmp)
 
-Quando o script terminar, executando todos os passos, será criado um novo arquivo: "sraghosp2.dbf". Esse arquivo que deverá ser usado no Tabwin para fazer a tabulação dos dados do arquivo que o usuário baixou no SIVEP Gripe.
+Quando o script terminar, executando todos os passos, será criado um novo arquivo: "sraghosp2.dbf". Esse arquivo que deverá ser usado no Tabwin para fazer a tabulação dos dados que o usuário baixou no SIVEP Gripe.
 
 ![alt text](https://github.com/csis2/DEF_CNV_SRAGHOSP/blob/main/img/imagem10.bmp)
 
