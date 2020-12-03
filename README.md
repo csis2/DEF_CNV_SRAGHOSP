@@ -67,7 +67,12 @@ Os créditos pela criação dos arquivos CNV/DEF originais usados nesse projeto 
 
 ## Nota para desenvolvedores
 
-O arquivo executável que acompanha os demais arquivos desse projeto, foi desenvolvido usando a linguagem Harbour versão 3.0 (https://harbour.github.io/). 
+O arquivo executável que acompanha os demais arquivos desse projeto, foi desenvolvido usando a linguagem Harbour versão 3.0 (https://harbour.github.io/).
+O código fonte do arquivo executável está no diretório "BaseDBF". Para compilação, foi usado o compilador hbmk2, disponível na distribuição do Harbour.
+Para compilar, é necessário indicar a biblioteca hbct na linha de comando:
+
+
+
 
 ## Segurança
 
