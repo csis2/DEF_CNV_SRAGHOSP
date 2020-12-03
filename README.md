@@ -71,7 +71,7 @@ O arquivo executável que acompanha os demais arquivos desse projeto, foi desenv
 O código fonte do arquivo executável está no diretório "BaseDBF". Para compilação, foi usado o compilador hbmk2, disponível na distribuição do Harbour.
 Para compilar, é necessário indicar a biblioteca hbct na linha de comando:
 
-
+`hbmk2 sraghosp_plus.prg hbct.hbc`
 
 
 ## Segurança
