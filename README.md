@@ -11,7 +11,7 @@ Escolha sempre a última versão disponível. A versão mais atual vem marcada c
 
 ![alt text](https://github.com/csis2/DEF_CNV_SRAGHOSP/blob/main/img/imagem02.bmp)
 
-Clique no link "SivepGripe.rar" e faça o download do arquivo.
+Clique no link "SivepGripe.rar" (seta vermelha 3) e faça o download do arquivo.
 
 ![alt text](https://github.com/csis2/DEF_CNV_SRAGHOSP/blob/main/img/imagem03.bmp)
 
