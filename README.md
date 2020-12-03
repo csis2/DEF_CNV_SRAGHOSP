@@ -9,61 +9,50 @@ Primeiro, acesse a seção onde estão disponíveis os releases (seta vermelha 1
 
 Escolha sempre a última versão disponível. A versão mais atual vem marcada com a legenda "Latest" (seta vermelha 2).
 
-![](C:\Users\luizvirginio\Desktop\prints sivep gripe\imagem02.bmp)
 ![alt text](https://github.com/csis2/DEF_CNV_SRAGHOSP/blob/main/img/imagem02.bmp)
 
 Clique no link "SivepGripe.rar" e faça o download do arquivo.
 
-![](C:\Users\luizvirginio\Desktop\prints sivep gripe\imagem03.bmp)
 ![alt text](https://github.com/csis2/DEF_CNV_SRAGHOSP/blob/main/img/imagem03.bmp)
 
 Descompacte o arquivo "SivepGripe.rar" utilizando um descompactador da sua preferência.
 
 Utilizando o descompactador, será visualizado uma pasta com o nome "SivepGripe".
 
-![](C:\Users\luizvirginio\Desktop\prints sivep gripe\imagem04.bmp)
 ![alt text](https://github.com/csis2/DEF_CNV_SRAGHOSP/blob/main/img/imagem04.bmp)
 
 Extraia a pasta inteira para dentro do disco local C.
 
-![](C:\Users\luizvirginio\Desktop\prints sivep gripe\imagem05.bmp)
 ![alt text](https://github.com/csis2/DEF_CNV_SRAGHOSP/blob/main/img/imagem05.bmp)
 
 Após a descompactação o resultado deverá ficar como mostrado na figura acima.
 
 Dentro da pasta "SivepGripe", a estrutura estará distribuída de acordo com a figura abaixo.
 
-![](C:\Users\luizvirginio\Desktop\prints sivep gripe\imagem06.bmp)
 ![alt text](https://github.com/csis2/DEF_CNV_SRAGHOSP/blob/main/img/imagem06.bmp)
 
 Usando a aplicação "SivepGripe" (https://sivepgripe.saude.gov.br/sivepgripe/login.html), faça o download de um arquivo de exportação DBF. Salve o arquivo na subpasta "BaseDBF" mostrada acima.
 
 Descompacte o arquivo baixado utilizando um descompactador de sua preferência e salve o arquivo resultante na subpasta "BaseDBF".
 
-![](C:\Users\luizvirginio\Desktop\prints sivep gripe\imagem07.bmp)
 ![alt text](https://github.com/csis2/DEF_CNV_SRAGHOSP/blob/main/img/imagem07.bmp)
 
 O resultado da operação será parecido com o mostrado na figura acima.
 
 Renomeie o arquivo DBF resultante da descompactação para "sraghosp.dbf".
 
-![](C:\Users\luizvirginio\Desktop\prints sivep gripe\imagem08.bmp)
 ![alt text](https://github.com/csis2/DEF_CNV_SRAGHOSP/blob/main/img/imagem08.bmp)
 
 Uma vez renomeado, rode o arquivo "sraghosp_plus.exe", que também estará na subpasta "BaseDBF".
 
-![](C:\Users\luizvirginio\Desktop\prints sivep gripe\imagem09.bmp)
 ![alt text](https://github.com/csis2/DEF_CNV_SRAGHOSP/blob/main/img/imagem09.bmp)
 
 Quando o script terminar, executando todos os passos, será criado um novo arquivo: "sraghosp2.dbf". Esse arquivo que deverá ser usado no Tabwin para fazer a tabulação dos dados do arquivo que o usuário baixou no SIVEP Gripe.
 
-![](C:\Users\luizvirginio\Desktop\prints sivep gripe\imagem10.bmp)
 ![alt text](https://github.com/csis2/DEF_CNV_SRAGHOSP/blob/main/img/imagem10.bmp)
 
-![](C:\Users\luizvirginio\Desktop\prints sivep gripe\imagem11.bmp)
 ![alt text](https://github.com/csis2/DEF_CNV_SRAGHOSP/blob/main/img/imagem11.bmp)
 
-![](C:\Users\luizvirginio\Desktop\prints sivep gripe\imagem12.bmp)
 ![alt text](https://github.com/csis2/DEF_CNV_SRAGHOSP/blob/main/img/imagem12.bmp)
 
 ## O que o pacote DEF_CNV_SRAGHOSP contém?
