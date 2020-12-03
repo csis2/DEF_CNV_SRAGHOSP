@@ -6,7 +6,7 @@ Arquivos de tabulação DEF/CNV para notificações SRAG Hospitalizado do SIVEP 
 Primeiro, acesse a seção onde estão disponíveis os releases (seta vermelha 1).
 
 ![](C:\Users\luizvirginio\Desktop\prints sivep gripe\imagem01.bmp)
-![alt text](https://github.com/csis2/DEF_CNV_SRAGHOSP/blob/master/img/imagem01.jpg)
+![alt text](https://github.com/csis2/DEF_CNV_SRAGHOSP/blob/master/img/imagem01.bmp)
 
 Escolha sempre a última versão disponível. A versão mais atual vem marcada com a legenda "Latest" (seta vermelha 2).
 
